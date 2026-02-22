@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncUp - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>SyncUp</h1>
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    <div class="user-details">
+                        <div class="user-name" id="userName">Loading...</div>
+                        <div class="user-tag" id="userTag">#-----</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="channels-section">
+                <h2>Channels</h2>
+                <div class="channels-list" id="channelsList">
+                    <!-- Channels will be populated by JavaScript -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h2 id="currentChannel">Welcome to SyncUp</h2>
+                <p class="channel-description" id="channelDescription">Select a channel to see notifications</p>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="welcome-message" id="welcomeMessage">
+                    <h3>Welcome to your dashboard!</h3>
+                    <p>You've been automatically added to channels based on your roles.</p>
+                    <p>Select a channel from the sidebar to see notifications and changes.</p>
+                </div>
+
+                <div class="notifications-container" id="notificationsContainer" style="display: none;">
+                    <!-- Notifications will appear here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
