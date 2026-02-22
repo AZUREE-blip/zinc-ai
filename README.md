@@ -1,4 +1,4 @@
-# SyncUp: Role-Aware Cross-Tool Change Synchronization Platform
+# Zinc.ai: Role-Aware Cross-Tool Change Synchronization Platform
 
 A macOS-first platform that synchronizes and intelligently routes changes across tools (Notion, Figma, GitHub, Jira/Linear, Slack) based on role relevance.
 

@@ -1,40 +1,45 @@
 {
-  "name": "syncup",
-  "version": "0.1.0",
-  "description": "Role-Aware Cross-Tool Change Synchronization Platform",
+  "name": "zinc-ai",
+  "version": "0.3.0",
+  "description": "Zinc.ai — Slack bot + desktop watcher powered by Moltbook",
   "type": "module",
+  "main": "electron/main.cjs",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "dev:server": "tsx watch scripts/dev-server.ts",
-    "build": "tsc",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint src --ext .ts",
-    "test": "vitest",
-    "test:watch": "vitest --watch"
+    "dev": "concurrently -n hub,bot,watcher -c blue,green,yellow \"npm run dev:hub\" \"npm run dev:bot\" \"npm run dev:watcher\"",
+    "dev:hub": "tsx server/moltbook-hub/index.ts",
+    "dev:bot": "tsx server/slack-bot/index.ts",
+    "dev:watcher": "electron .",
+    "build:check": "tsc --noEmit"
   },
   "keywords": [
-    "synchronization",
-    "change-detection",
-    "role-based-routing",
-    "cross-tool"
+    "slack-bot",
+    "screen-watcher",
+    "moltbook",
+    "electron"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@tauri-apps/api": "^2.0.0",
-    "express": "^4.18.2",
-    "winston": "^3.11.0",
-    "zod": "^3.22.4"
+    "@anthropic-ai/sdk": "^0.20.9",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/websocket": "^11.2.0",
+    "@slack/bolt": "^4.6.0",
+    "active-win": "^8.2.1",
+    "better-sqlite3": "^9.6.0",
+    "electron-store": "^8.2.0",
+    "fastify": "^5.7.4",
+    "openai": "^4.104.0",
+    "ws": "^8.19.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.10.5",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint": "^8.56.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20.19.33",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3",
     "tsx": "^4.7.0",
-    "typescript": "^5.3.3",
-    "vitest": "^4.0.16"
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=20.0.0"

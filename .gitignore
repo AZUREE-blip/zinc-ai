@@ -44,3 +44,16 @@ Thumbs.db
 # Sensitive files (auto-detected)
 node_modules
 
+# SQLite WAL/SHM files
+*.db-shm
+*.db-wal
+
+# Windows
+desktop.ini
+
+# Claude Code
+.claude/
+
+# Large model files
+*.gguf
+

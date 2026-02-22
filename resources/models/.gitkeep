@@ -1,0 +1,3 @@
+# This file keeps the models directory in git
+# Actual model files (.gguf) are gitignored due to size
+# See DOWNLOAD_MODELS.md for download instructions
